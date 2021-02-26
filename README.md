@@ -1,2 +1,2 @@
-# lyrics-deno
+# lyrics-deno (WIP)
 Lyrics finder for Deno
