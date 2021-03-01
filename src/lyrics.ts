@@ -1,10 +1,9 @@
 import {DOMParser} from 'https://deno.land/x/deno_dom/deno-dom-wasm.ts'
 
 export async function lyrics(song: string) {
-  //: Promise<string[][]>
   song = song.replace(/ /g, '+')
   const doc = new DOMParser().parseFromString(
-    await fetch(`https://www.doc.com/search?q=${song}`, {
+    await fetch(`https://www.google.com/search?q=${song}`, {
       headers: {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4414.0 Safari/537.36 Edg/90.0.803.0,gzip(gfe)'
       }
