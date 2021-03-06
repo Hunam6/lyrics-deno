@@ -1,6 +1,6 @@
 import {DOMParser} from 'https://deno.land/x/deno_dom/deno-dom-wasm.ts'
 
-export async function lyrics(song: string) {
+export async function lyrics(song: string, string = true) {
   song = song.replace(/ /g, '+')
   const doc = new DOMParser().parseFromString(
     await fetch(`https://www.google.com/search?q=${song}`, {
@@ -10,7 +10,7 @@ export async function lyrics(song: string) {
     }).then(res => res.text()),
     'text/html'
   )!
-  const lyrics = []
+  let lyrics = []
   for (let i = 1; i < doc.querySelectorAll('.ujudUb').length; i++) {
     const paragraph = []
     for (let j = 0; j < doc.querySelectorAll('.ujudUb')[i].children.length; j += 2) paragraph.push(doc.querySelectorAll('.ujudUb')[i].children[j].textContent)
@@ -38,7 +38,18 @@ export async function lyrics(song: string) {
       if (element === '' || index === 0) formatedLyrics.push([])
       else formatedLyrics[formatedLyrics.length-1].push(element)
     })
-    return formatedLyrics
+    lyrics = formatedLyrics
+  }
+  if(string) {
+    let stringLyrics = ''
+    lyrics.forEach(e1 => {
+      e1.forEach((e2: string[]) => {
+        stringLyrics += e2 + '\n'
+      })
+      stringLyrics += '\n'
+    })
+    stringLyrics = stringLyrics.slice(0, -2)
+    return stringLyrics
   }
   return lyrics
 }
