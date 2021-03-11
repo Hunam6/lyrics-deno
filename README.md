@@ -76,4 +76,4 @@ lyrics(song: string, string: boolean)
 
 ### Credits
 
-Thanks [@b-fuze](github.com/b-fuze) for it's [Deno DOM](https://github.com/b-fuze/deno-dom).
+Thanks [@b-fuze](https://github.com/b-fuze) for it's [Deno DOM](https://github.com/b-fuze/deno-dom).
