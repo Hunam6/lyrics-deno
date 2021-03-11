@@ -1,10 +1,7 @@
-# lyrics-deno
-
-## A lyrics finder/scraper for Deno
+<h1 align='center'><ins>lyrics-deno</ins></h1>
+<p align='center'><strong>A lyrics finder/scraper for Deno</strong></p>
 
 ---
-
-### Usage
 
 #### Example
 
